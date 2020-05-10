@@ -1,10 +1,7 @@
 services: docker
 
-before_install:
+before_script:
   - docker -v
-
-install:
-  - npm run docker:build
 
 script:
   - npm run docker:test
