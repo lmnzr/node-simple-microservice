@@ -20,7 +20,7 @@ describe('Get Hello World', () => {
   it('should return 200 and return Hello World!', async done => {
     const res = await request(app).get('/')
     expect(res.statusCode).toEqual(200)
-    expect(res.body.response).toEqual("Hello World!")
+    expect(res.body.response).toEqual("Hello World")
     done()
   })
 })
