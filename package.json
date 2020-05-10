@@ -1,0 +1,47 @@
+{
+  "name": "lmnzr-rabbitmq-producer",
+  "version": "1.0.0",
+  "description": "Rabbitmq Experiment with Node JS Producer",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "jest  --coverage"
+  },
+  "keywords": [
+    "node",
+    "express",
+    "nodejs",
+    "expressjs",
+    "rabbitmq"
+  ],
+  "author": "lmnzr",
+  "license": "ISC",
+  "dependencies": {
+    "@babel/core": "^7.9.6",
+    "@babel/polyfill": "^7.8.7",
+    "@babel/preset-env": "^7.9.6",
+    "@babel/register": "^7.9.0",
+    "amqplib": "^0.5.5",
+    "body-parser": "^1.19.0",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "jest": "^24.9.0",
+    "supertest": "^4.0.2"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "collectCoverage": true,
+    "coverageReporters": [
+      "json",
+      "lcov",
+      "html"
+    ],
+    "coverageDirectory": "./coverage/",
+    "coveragePathIgnorePatterns": [
+      "./node_modules/",
+      "./.vscode/"
+    ]
+  }
+}

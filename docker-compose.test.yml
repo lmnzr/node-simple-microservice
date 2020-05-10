@@ -1,0 +1,24 @@
+# docker-compose.yml
+version: "3"
+services:
+  app-test:
+    build:
+      context: ./
+      dockerfile: Dockerfile.test
+    depends_on:
+      - rabbit-test
+    environment:
+      RABBITMQ: amqp://test:test@rabbit-test/test
+      PORT: 9000
+    ports:
+      - "9000:9000"
+
+  rabbit-test:
+    image: rabbitmq:3.8.3
+    ports:
+      - "5672:5672"
+    environment:
+      RABBITMQ_DEFAULT_USER: test
+      RABBITMQ_DEFAULT_PASS: test
+      RABBITMQ_DEFAULT_VHOST: test
+      
