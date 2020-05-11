@@ -5,7 +5,6 @@ jobs:
       services: docker
       script: npm run docker:test
     - stage: deploy
-      if: branch = development
       language: node_js
       node_js: "10"
       script: npm run build
