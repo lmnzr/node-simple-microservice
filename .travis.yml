@@ -1,16 +1,22 @@
 jobs:
   include:
     - stage: test
+      name: Integration Tests
       if: branch = development
       services: docker
       script: npm run docker:test
     - stage: deploy
+      name: Heroku Deployment
       language: node_js
       node_js: "10"
-      script: npm run build
       deploy:
-        provider: heroku
-        api_key: $HEROKU_API_KEY
-        app:
-          development: lmnzr-dev-app
-          master: lmnzr-dev-staging
+        - provider: heroku
+          api_key: $HEROKU_API_KEY
+          app:
+            development: lmnzr-dev-app
+            master: lmnzr-staging-app
+        - provider: heroku
+          api_key: $HEROKU_API_KEY
+          app: lmnzr-app
+          on: 
+            tags: true
