@@ -10,7 +10,7 @@ services:
     environment:
       RABBITMQ: amqp://test:test@rabbit-test/test
       PORT: 9000
-      COVERALL_TOKEN: IuDmBx0Wf10YuzAZBHRXqneEONL5Ru6QF
+      COVERALLS_REPO_TOKEN: ${COVERALLS_REPO_TOKEN}
     ports:
       - "9000:9000"
 
