@@ -10,5 +10,8 @@ jobs:
     - stage: deploy
       language: node_js
       node_js: "10"
-      script: npm run build      
-    
+      script: npm run build
+      deploy:
+        provider: heroku
+        api_key: 70889701-077c-4a9b-a6fd-fe58a1688366
+        app: lmnzr-dev-app
