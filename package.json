@@ -9,7 +9,7 @@
   },
   "scripts": {
     "start": "node index.js",
-    "test": "jest  --coverage",
+    "test": "jest  --coverage && cat ./coverage/lcov.info | coveralls",
     "build": "npm install --only-prod",
     "docker:test": "docker-compose -f ./docker-compose.test.yml up --build --abort-on-container-exit"
   },
@@ -37,6 +37,7 @@
     "express": "^4.17.1"
   },
   "devDependencies": {
+    "coveralls": "^3.1.0",
     "jest": "^24.9.0",
     "supertest": "^4.0.2"
   },

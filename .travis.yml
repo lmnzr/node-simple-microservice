@@ -19,5 +19,14 @@ jobs:
         - provider: heroku
           api_key: $HEROKU_API_KEY
           app: lmnzr-app
-          on: 
+          on:
             tags: true
+    - stage: ping-development
+      if: branch = development
+      script: "curl https://lmnzr-dev-app.herokuapp.com"
+    - stage: ping-staging
+      if: branch = master
+      script: "curl https://lmnzr-staging-app.herokuapp.com"
+    - stage: ping-production
+      if: tag IS present
+      script: "curl https://lmnzr-app.herokuapp.com"

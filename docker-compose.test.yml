@@ -10,6 +10,7 @@ services:
     environment:
       RABBITMQ: amqp://test:test@rabbit-test/test
       PORT: 9000
+      COVERALLS_REPO_TOKEN: ${COVERALLS_REPO_TOKEN}
     ports:
       - "9000:9000"
 
@@ -21,4 +22,3 @@ services:
       RABBITMQ_DEFAULT_USER: test
       RABBITMQ_DEFAULT_PASS: test
       RABBITMQ_DEFAULT_VHOST: test
-      
