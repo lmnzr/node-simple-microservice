@@ -1,12 +1,11 @@
 jobs:
   include:
-    - stage: Tests
-      name: Integration Tests
-      services: docker
-      script: npm run docker:test
-    - stage: Build
-      name: Install Dependencies
-      language: node_js
-      node_js: "10"
-      script: npm run docker:test
+    - stage: Test & Build
+      - name: Integration Tests
+        services: docker
+        script: npm run docker:test
+      - name: Install Dependencies
+        language: node_js
+        node_js: "10"
+        script: npm run build      
     
