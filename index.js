@@ -1,8 +1,8 @@
 require("@babel/register");
 require("@babel/polyfill");
 require('dotenv').config();
-let rabbitMQ = require('./services/mqService')
-let app = require('./app.js');
+let rabbitMQ = require('./src/services/mqService')
+let app = require('./src/app.js');
 
 let port = process.env.PORT
 let mqurl = process.env.RABBITMQ

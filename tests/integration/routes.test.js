@@ -3,8 +3,8 @@ require("@babel/polyfill");
 require('dotenv').config();
 
 const request = require('supertest')
-const app = require('../../app.js')
-const mq = require('../../services/mqService')
+const app = require('../../src/app.js')
+const mq = require('../../src/services/mqService')
 
 let mqurl = process.env.RABBITMQ
 
