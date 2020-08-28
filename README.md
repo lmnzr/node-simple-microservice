@@ -14,7 +14,7 @@ To use the application it is required to use:
 + [RabbitMQ](https://www.rabbitmq.com/)
 
 ## Pipeline
-The CI/CD pipeline is run using [Gitlab CI/CD](https://docs.gitlab.com/ee/ci/). 
+The CI/CD pipeline is run using [Travis CI](https://travis-ci.org/). 
 It consists of three stage:
 + Test phase where the code is build then tested using docker environment. The coverage report then published to [Codecov](https://codecov.io/)
 + Deploy phase where the application deployed to [Heroku](https://www.heroku.com/).
